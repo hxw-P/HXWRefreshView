@@ -1,0 +1,13 @@
+
+//上拉加载
+"HXWLoadedNOMore" = "No more data";
+"HXWLoadedHasMore" = "Pull up to load more";
+"HXWReleaseToLoadMore" = "Release to load more";
+"HXWLoadingMore" = "Loading...";
+
+//下拉刷新
+"HXWPullDownToRefresh" = "Pull down to refresh";
+"HXWReleaseToRefresh" = "Release to refresh";
+"HXWRefreshing" = "Refreshing...";
+"HXWRefreshedSuccess" = "RefreshedSuccess";
+"HXWRefreshedFailed" = "RefreshedFailed";

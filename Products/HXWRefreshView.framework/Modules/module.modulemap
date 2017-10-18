@@ -1,0 +1,11 @@
+framework module HXWRefreshView {
+  umbrella header "HXWRefreshView.h"
+
+  export *
+  module * { export * }
+}
+
+module HXWRefreshView.Swift {
+    header "HXWRefreshView-Swift.h"
+    requires objc
+}

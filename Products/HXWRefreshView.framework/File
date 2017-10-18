@@ -1,0 +1,18 @@
+添加默认的headerRefresh
+tableView?.hxw_addRefreshHeaderView(refreshHeader: HXWRefreshHeader(), delegate: self)
+实现headerRefresh代理HXWRefreshHeaderDelegate
+代理方法     refresh()
+
+添加默认的footerRefresh
+tableView.hxw_addRefreshFooterView(refreshFooter: HXWRefreshFooter(), delegate: self)
+实现footerRefresh代理HXWRefreshFooterDelegate
+代理方法     loadMore
+
+添加自定义的headerRefresh
+tableView?.hxw_addRefreshHeaderView(refreshHeader: HXWRefreshCycleHeader(), delegate: self)
+自定义headerRefresh继承HXWRefreshHeader并且重载 layoutSubviews(添加自己的刷新视图和文字)和state改变时调用的各个方法
+
+
+用到@objc的地方
+1.重写父类的类的扩展中的方法，类扩展中的方法要加@objc
+2.按钮方法前要加@objc

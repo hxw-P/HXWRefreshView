@@ -1,0 +1,13 @@
+
+//上拉加载
+"HXWLoadedNOMore" = "没有更多数据";
+"HXWLoadedHasMore" = "上拉加载";
+"HXWReleaseToLoadMore" = "松开加载";
+"HXWLoadingMore" = "加载中...";
+
+//下拉刷新
+"HXWPullDownToRefresh" = "下拉刷新";
+"HXWReleaseToRefresh" = "松开刷新";
+"HXWRefreshing" = "刷新中...";
+"HXWRefreshedSuccess" = "刷新成功";
+"HXWRefreshedFailed" = "刷新失败";
