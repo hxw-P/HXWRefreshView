@@ -12,5 +12,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
   s.source_files  = "HXWRefreshSource/Classes/**/*"
   s.resources = "HXWRefreshSource/Assets/**/*"
+  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '3.0' }
 
 end
