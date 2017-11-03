@@ -6,22 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		42554EB11F8E0A3100DFC9F9 /* HXWRefresh */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 42554EB41F8E0A3100DFC9F9 /* Build configuration list for PBXAggregateTarget "HXWRefresh" */;
-			buildPhases = (
-				42554EB51F8E0A4800DFC9F9 /* ShellScript */,
-				42554ED71F8E1EF400DFC9F9 /* ShellScript */,
-			);
-			dependencies = (
-				42554EDD1F8E1F6000DFC9F9 /* PBXTargetDependency */,
-			);
-			name = HXWRefresh;
-			productName = HXWRefresh;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		4234CF571F7A23DA00352C47 /* HXWRefreshView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4234CF4D1F7A23DA00352C47 /* HXWRefreshView.framework */; };
 		4234CF5C1F7A23DA00352C47 /* HXWRefreshViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4234CF5B1F7A23DA00352C47 /* HXWRefreshViewTests.swift */; };
@@ -52,13 +36,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		4234CF581F7A23DA00352C47 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4234CF441F7A23DA00352C47 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4234CF4C1F7A23DA00352C47;
-			remoteInfo = HXWRefreshView;
-		};
-		42554EDC1F8E1F6000DFC9F9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4234CF441F7A23DA00352C47 /* Project object */;
 			proxyType = 1;
@@ -446,11 +423,6 @@
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
-					42554EB11F8E0A3100DFC9F9 = {
-						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = 7CD3J75352;
-						ProvisioningStyle = Automatic;
-					};
 					427B0F6A1F8F5B13008F69AF = {
 						CreatedOnToolsVersion = 9.0;
 						DevelopmentTeam = 7CD3J75352;
@@ -491,7 +463,6 @@
 				4234CF4C1F7A23DA00352C47 /* HXWRefreshView */,
 				4234CF551F7A23DA00352C47 /* HXWRefreshViewTests */,
 				4289A0541F8B0DF900353FD2 /* RefreshSource */,
-				42554EB11F8E0A3100DFC9F9 /* HXWRefresh */,
 				427B0F6A1F8F5B13008F69AF /* HXWRefreshViewDemo */,
 				427B0F7D1F8F5B13008F69AF /* HXWRefreshViewDemoTests */,
 				427B0F881F8F5B13008F69AF /* HXWRefreshViewDemoUITests */,
@@ -549,35 +520,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		42554EB51F8E0A4800DFC9F9 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Sets the target folders and the final framework product.\n# 如果工程名称和Framework的Target名称不一样的话，要自定义FMKNAME\n# 例如: FMK_NAME = \"MyFramework\"\nFMK_NAME=${PROJECT_NAME}\n# Install dir will be the final output to the framework.\n# The following line create it in the root folder of the current project.\nINSTALL_DIR=${SRCROOT}/Products/${FMK_NAME}.framework\n# Working dir will be deleted after the framework creation.\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework\n# -configuration ${CONFIGURATION}\n# Clean and Building both architectures.\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphoneos clean build\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphonesimulator clean build\n# Cleaning the oldest.\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\nmkdir -p \"${INSTALL_DIR}\"\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\n# Uses the Lipo Tool to merge both binary files (i386 + armv6/armv7) into one Universal final product.\nlipo -create \"${SIMULATOR_DIR}/${FMK_NAME}\" \"${DEVICE_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/${FMK_NAME}\"\nrm -r \"${WRK_DIR}\"\nopen \"${INSTALL_DIR}\"";
-		};
-		42554ED71F8E1EF400DFC9F9 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4234CF481F7A23DA00352C47 /* Sources */ = {
@@ -645,11 +587,6 @@
 			isa = PBXTargetDependency;
 			target = 4234CF4C1F7A23DA00352C47 /* HXWRefreshView */;
 			targetProxy = 4234CF581F7A23DA00352C47 /* PBXContainerItemProxy */;
-		};
-		42554EDD1F8E1F6000DFC9F9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4234CF4C1F7A23DA00352C47 /* HXWRefreshView */;
-			targetProxy = 42554EDC1F8E1F6000DFC9F9 /* PBXContainerItemProxy */;
 		};
 		427B0F801F8F5B13008F69AF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -736,7 +673,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -790,7 +727,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -821,7 +758,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -843,7 +780,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -872,24 +809,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
-			};
-			name = Release;
-		};
-		42554EB21F8E0A3100DFC9F9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7CD3J75352;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		42554EB31F8E0A3100DFC9F9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7CD3J75352;
-				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -1081,15 +1000,6 @@
 			buildConfigurations = (
 				4234CF651F7A23DA00352C47 /* Debug */,
 				4234CF661F7A23DA00352C47 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		42554EB41F8E0A3100DFC9F9 /* Build configuration list for PBXAggregateTarget "HXWRefresh" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				42554EB21F8E0A3100DFC9F9 /* Debug */,
-				42554EB31F8E0A3100DFC9F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

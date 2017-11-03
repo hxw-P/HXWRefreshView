@@ -14,5 +14,8 @@ tableView?.hxw_addRefreshHeaderView(refreshHeader: HXWRefreshCycleHeader(), dele
 
 
 用到@objc的地方
+swift 4.0 以后
 1.重写父类的类的扩展中的方法，类扩展中的方法要加@objc
 2.按钮方法前要加@objc
+
+库中的文件和库外的文件重名不会报错，对于本地的工程，库外的文件优先级大于库内的
