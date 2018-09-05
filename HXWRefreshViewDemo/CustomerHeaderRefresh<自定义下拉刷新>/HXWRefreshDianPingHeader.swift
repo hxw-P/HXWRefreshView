@@ -31,7 +31,7 @@ class HXWRefreshDianPingHeader: HXWRefreshHeader {
 
 extension HXWRefreshDianPingHeader {
     
-    //MARK: /**普通**/
+    //MARK: /**普通的**/
     override func normal() {
     }
     
